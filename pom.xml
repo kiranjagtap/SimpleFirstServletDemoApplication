@@ -32,17 +32,10 @@
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
-
-    <!--DB liberaries-->
     <dependency>
-      <groupId>org.apache.derby</groupId>
-      <artifactId>derby</artifactId>
-      <version>10.14.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.derby</groupId>
-      <artifactId>derbyclient</artifactId>
-      <version>10.14.2.0</version>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.16</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
