@@ -15,14 +15,18 @@ public class CategoryServlet extends HttpServlet {
     }
 
 
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = (String) getServletContext().getAttribute("username");
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("category.jsp");
-        System.out.println(username);
+    public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        String username = (String) httpServletRequest.getSession().getAttribute("user");
 
-        req.setAttribute("username", username);
-
-        requestDispatcher.forward(req, resp);
+        if (null != username) {
+            httpServletRequest.setAttribute("username", username);
+            RequestDispatcher requestDispatcher = httpServletRequest.getRequestDispatcher("category.jsp");
+            requestDispatcher.forward(httpServletRequest, httpServletResponse);
+        } else {
+            httpServletRequest.setAttribute("errorMessage", "Invalid User, please login again");
+            RequestDispatcher requestDispatcher = httpServletRequest.getRequestDispatcher("index.jsp");
+            requestDispatcher.forward(httpServletRequest, httpServletResponse);
+        }
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
