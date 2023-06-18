@@ -84,6 +84,17 @@
     </servlet-mapping>
 
 
+    <servlet-mapping>
+        <servlet-name>productServlet</servlet-name>
+        <url-pattern>/products</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>productServlet</servlet-name>
+        <servlet-class>com.firstapp.controller.ProductServlet</servlet-class>
+    </servlet>
+
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
